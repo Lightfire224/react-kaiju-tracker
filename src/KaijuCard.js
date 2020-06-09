@@ -8,7 +8,7 @@ class KaijuCard extends React.Component {
   state = {
     location: '',
     description: '',
-    kaijuId: this.props.id 
+    kaijuId: this.props.id
   }
 
   handleChange = (event) => {
@@ -29,34 +29,41 @@ class KaijuCard extends React.Component {
       },
       body: JSON.stringify(this.state)
     }
-    fetch(`http://localhost:4000/sightings`,options)
-    .then(response => response.json())
-    .then(this.props.reRender)
+    fetch(`http://localhost:4000/sightings`, options)
+      .then(response => response.json())
+      .then(this.props.reRender)
   }
 
   render() {
     //do filteredSightings with a filter
-    // const filteredSightings = this.props.sightings.filter(sighting => sighting.kaijuId === this.props.id)
-    
+    const filteredSightings = this.props.sightings.filter(sighting => sighting.kaijuId === this.props.id)
+
     //do filteredsightings in a forEach
-    let filteredSightings = []
-    this.props.sightings.forEach(sighting => 
-      {
-      if (sighting.kaijuId === this.props.id){
-        filteredSightings.push(sighting.id)
-      }
-    })
-    /////////////
+    // let filteredSightings = []
+    // this.props.sightings.forEach(sighting => {
+    //   if (sighting.kaijuId === this.props.id) {
+    //     filteredSightings.push(sighting.id)
+    //   }
+    // })
+    ////////////////////////////////////////////////////////////////////////////////////////
 
     //map item is always pushed but you can modify it beforehand. Without modification looks like this:
     // you can modify whats in the push, here we tacked on id to make an array of sighting id's 
-    let filteredSightings = []
-    this.props.sightings.forEach(sighting => {
-      filteredSightings.push(sighting.id)
-    }
-    /////////////////////////
+    // let filteredSightings = []
+    // this.props.sightings.forEach(sighting => {
+    //   filteredSightings.push(sighting.id)
+    // })
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    console.log(this.props.name, filteredSightings)
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    // let filteredSightings = 0
+    // this.props.sightings.forEach(sighting => {
+    //   if (sighting.kaijuId === this.props.id) {
+    //     filteredSightings+= sighting.id
+    //   }
+    // })
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     return (
       <div className='kaiju-card'>
         <h2 className='kaiju-card-name'>{this.props.name}</h2>
