@@ -14,7 +14,26 @@ class KaijuContainer extends React.Component {
     kaijus: []
   }
 
+  getAllKaijus = () => {
+    requests.fetchKaijus()
+      .then(kaijus =>  {
+        this.setState({kaijus})
+      })
+  }
+
+  componentDidMount(){
+    this.getAllKaijus()
+  }
+  
+
+
+  //first we have to get the fetches
+  //then we should console.log the fetches to see if we have them
+  // -- within the fetch, we should setState of kaijus to the fetch data
+  // then componentDidMount on the fetch function
+
   render() {
+
     return (
       <>
 
