@@ -11,20 +11,30 @@ import * as requests from './requests'
 class KaijuContainer extends React.Component {
 
   state = {
-    kaijus: []
+    kaijus: [],
+    sightings: []
   }
 
   getAllKaijus = () => {
     requests.fetchKaijus()
-      .then(kaijus =>  {
-        this.setState({kaijus})
+      .then(kaijus => {
+        this.setState({ kaijus })
       })
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getAllKaijus()
+    this.getAllSightings()
   }
-  
+
+  getAllSightings = () => {
+    requests.fetchSightings()
+      .then(sightings => {
+        this.setState({sightings})
+      })
+  }
+
+
 
 
   //first we have to get the fetches
@@ -33,14 +43,13 @@ class KaijuContainer extends React.Component {
   // then componentDidMount on the fetch function
 
   render() {
-
     return (
       <>
 
         <CreateKaijuForm reRender={this.getAllKaijus} />
 
         <div id='kaiju-container'>
-          {this.state.kaijus.map(kaiju => <KaijuCard key={kaiju.id} {...kaiju} /> )}
+          {this.state.kaijus.map(kaiju => <KaijuCard key={kaiju.id} {...kaiju} sightings={this.state.sightings}/>)}
         </div>
 
 

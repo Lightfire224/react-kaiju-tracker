@@ -55,6 +55,12 @@
       "kaijuId": 1,
       "location": "Tokyo",
       "description": "Oh no! There goes Tokyo! Go go Godzilla!"
+    },
+    {
+      "id": 2,
+      "kaijuId": 2,
+      "location": "Mothra Town",
+      "description": "Mothra died again!"
     }
   ]
 }
