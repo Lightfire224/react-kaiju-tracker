@@ -8,33 +8,33 @@ class CreateKaijuForm extends React.Component {
     image: ''
   }
 
-  handleName = (event) => {
-    this.setState({name: event.target.value})
-  }
-
-  handlePower = (event) => {
-    this.setState({power: event.target.value})
-  }
-
-  handleImage = (event) => {
-    this.setState({image: event.target.value})
-  }
-
   handleChange = (event) => {
-    event.persist()
-
-    console.log(event.target.name, event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
-  // handleSubmit = (event) => {
-    // onSubmit={this.handleSubmit}
-  // }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    event.persist()
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(this.state)
+    }
+
+    fetch(`http://localhost:4000/kaijus`,options)
+    .then(response => response.json())
+    .then(this.props.reRender)
+  }
+
   render() {
     return (
-      <form id='create-kaiju-form' >
+      <form id='create-kaiju-form' onSubmit={this.handleSubmit} >
         <label>Name: </label>
         <input type='text' name='name' value={this.state.name} onChange={this.handleChange} placeholder="add your name here.." />
 
