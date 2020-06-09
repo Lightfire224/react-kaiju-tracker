@@ -102,6 +102,12 @@
       "description": "Kendall wya",
       "kaijuId": 8,
       "id": 9
+    },
+    {
+      "location": "",
+      "description": "Mothra died AGAIN!!",
+      "kaijuId": 2,
+      "id": 10
     }
   ]
 }

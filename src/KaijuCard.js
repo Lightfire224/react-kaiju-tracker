@@ -35,7 +35,27 @@ class KaijuCard extends React.Component {
   }
 
   render() {
-    const filteredSightings = this.props.sightings.filter(sighting => sighting.kaijuId === this.props.id)
+    //do filteredSightings with a filter
+    // const filteredSightings = this.props.sightings.filter(sighting => sighting.kaijuId === this.props.id)
+    
+    //do filteredsightings in a forEach
+    let filteredSightings = []
+    this.props.sightings.forEach(sighting => 
+      {
+      if (sighting.kaijuId === this.props.id){
+        filteredSightings.push(sighting.id)
+      }
+    })
+    /////////////
+
+    //map item is always pushed but you can modify it beforehand. Without modification looks like this:
+    // you can modify whats in the push, here we tacked on id to make an array of sighting id's 
+    let filteredSightings = []
+    this.props.sightings.forEach(sighting => {
+      filteredSightings.push(sighting.id)
+    }
+    /////////////////////////
+
     console.log(this.props.name, filteredSightings)
     return (
       <div className='kaiju-card'>
