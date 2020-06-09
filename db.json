@@ -61,6 +61,47 @@
       "kaijuId": 2,
       "location": "Mothra Town",
       "description": "Mothra died again!"
+    },
+    {
+      "location": "US",
+      "description": "blew up stuff",
+      "id": 3
+    },
+    {
+      "location": "Hong Kong",
+      "description": "Blew stuff up",
+      "kaijuId": 1,
+      "id": 4
+    },
+    {
+      "location": "asdfas",
+      "description": "new day different stuff",
+      "kaijuId": 1,
+      "id": 5
+    },
+    {
+      "location": "",
+      "description": "more stuff!!!!!!!",
+      "kaijuId": 1,
+      "id": 6
+    },
+    {
+      "location": "",
+      "description": "King Kong Power",
+      "kaijuId": 3,
+      "id": 7
+    },
+    {
+      "location": "",
+      "description": "He is inveitable",
+      "kaijuId": 6,
+      "id": 8
+    },
+    {
+      "location": "",
+      "description": "Kendall wya",
+      "kaijuId": 8,
+      "id": 9
     }
   ]
 }

@@ -49,7 +49,7 @@ class KaijuContainer extends React.Component {
         <CreateKaijuForm reRender={this.getAllKaijus} />
 
         <div id='kaiju-container'>
-          {this.state.kaijus.map(kaiju => <KaijuCard key={kaiju.id} {...kaiju} sightings={this.state.sightings}/>)}
+          {this.state.kaijus.map(kaiju => <KaijuCard reRender={this.getAllSightings} key={kaiju.id} {...kaiju} sightings={this.state.sightings}/>)}
         </div>
 
 
